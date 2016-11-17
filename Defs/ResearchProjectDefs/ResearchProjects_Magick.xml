@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  <ResearchProjectDef>
+    <defName>MagickStaff</defName>
+    <label>magick staff</label>
+    <description>The Ancients used a specially designed silver-cored staff in order to harness their magick. Allows you to craft magick staves.</description>
+    <baseCost>1500</baseCost>
+    <techLevel>Medieval</techLevel>
+    <requiredResearchFacilities>
+      <li>ActivatedTome</li>
+    </requiredResearchFacilities>
+  </ResearchProjectDef>
+</Defs>

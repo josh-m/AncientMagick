@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  <DamageDef Name="LocalInjuryBase" Abstract="True">
+    <workerClass>DamageWorker_AddInjury</workerClass>
+  </DamageDef>
+
+  <DamageDef ParentName="LocalInjuryBase">
+    <defName>Magick_Frostbite</defName>
+    <label>frostbite</label>
+    <hasForcefulImpact>false</hasForcefulImpact>
+    <makesBlood>false</makesBlood>
+    <incapChanceMultiplier>1.2</incapChanceMultiplier>
+    <canInterruptJobs>false</canInterruptJobs>
+    <externalViolence>true</externalViolence>
+    <hediff>Frostbite</hediff>
+    <additionalHediffs>
+      <li>
+        <hediff>Hypothermia</hediff>
+        <severityPerDamageDealt>0.05</severityPerDamageDealt>
+      </li>
+    </additionalHediffs>
+    <armorCategory>Heat</armorCategory>
+    <spreadOut>false</spreadOut>
+    <explosionDamage>5</explosionDamage>
+	<explosionSnowMeltAmount>0</explosionSnowMeltAmount>
+    <explosionCellMote>Mote_BlastDry</explosionCellMote>
+    <explosionColorCenter>(0.8, 1, 0.898)</explosionColorCenter>
+    <explosionColorEdge>(0.4, 0.698, 0.937)</explosionColorEdge>
+    <soundExplosion>Interact_BeatFire</soundExplosion>
+    <deathMessage>{0} has succumbed to frostbite.</deathMessage>
+    <harmAllLayersUntilOutside>true</harmAllLayersUntilOutside>
+  </DamageDef> 
+  
+</Defs>
