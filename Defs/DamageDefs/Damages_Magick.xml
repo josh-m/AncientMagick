@@ -7,6 +7,7 @@
   <DamageDef ParentName="LocalInjuryBase">
     <defName>Magick_Frostbite</defName>
     <label>frostbite</label>
+    <workerClass>AncientMagick.DamageWorker_AddInjury_Extinguish</workerClass>
     <hasForcefulImpact>false</hasForcefulImpact>
     <makesBlood>false</makesBlood>
     <incapChanceMultiplier>1.2</incapChanceMultiplier>
@@ -20,9 +21,9 @@
       </li>
     </additionalHediffs>
     <armorCategory>Heat</armorCategory>
-    <spreadOut>false</spreadOut>
+    <spreadOut>true</spreadOut>
     <explosionDamage>5</explosionDamage>
-	<explosionSnowMeltAmount>0</explosionSnowMeltAmount>
+    <explosionSnowMeltAmount>0</explosionSnowMeltAmount>
     <explosionCellMote>Mote_BlastDry</explosionCellMote>
     <explosionColorCenter>(0.8, 1, 0.898)</explosionColorCenter>
     <explosionColorEdge>(0.4, 0.698, 0.937)</explosionColorEdge>
