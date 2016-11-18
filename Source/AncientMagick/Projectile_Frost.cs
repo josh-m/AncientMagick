@@ -5,7 +5,7 @@ using System.Text;
 using Verse;
 using RimWorld;
 
-namespace Magick
+namespace AncientMagick
 {
     class Projectile_Frost: Projectile_Explosive
     {

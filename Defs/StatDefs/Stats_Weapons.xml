@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <StatDef>
+    <defName>Charges</defName>
+    <label>max charges</label>
+    <description>How many charges of a spell can be imbued into this weapon.</description>
+    <category>Weapon</category>
+    <defaultBaseValue>3</defaultBaseValue>
+    <minValue>1</minValue>
+    <maxValue>100</maxValue>
+    <toStringStyle>Integer</toStringStyle>
+    <showIfUndefined>false</showIfUndefined>
+    <displayPriorityInCategory>110</displayPriorityInCategory>
+  </StatDef>
+  
+</Defs>

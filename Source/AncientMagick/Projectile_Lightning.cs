@@ -6,7 +6,7 @@ using RimWorld;
 using Verse;
 using Verse.Sound;
 
-namespace Magick
+namespace AncientMagick
 {
     class Projectile_Lightning : Projectile_Explosive
     {

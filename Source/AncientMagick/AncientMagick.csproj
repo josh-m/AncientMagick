@@ -7,8 +7,8 @@
     <ProjectGuid>{D53E3AE9-18B5-46CC-89B3-1920B0EE5F84}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Magick</RootNamespace>
-    <AssemblyName>Magick</AssemblyName>
+    <RootNamespace>AncientMagick</RootNamespace>
+    <AssemblyName>AncientMagick</AssemblyName>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -29,6 +29,7 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <UseVSHostingProcess>false</UseVSHostingProcess>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Assembly-CSharp">
@@ -47,10 +48,17 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Comps\CompChargeUser.cs" />
+    <Compile Include="Comps\CompProperties_ChargeUser.cs" />
+    <Compile Include="DetourInjector.cs" />
+    <Compile Include="Detours.cs" />
+    <Compile Include="Detours_GenStep_ScatterShrines.cs" />
+    <Compile Include="GizmoChargeStatus.cs" />
     <Compile Include="Projectile_Frost.cs" />
     <Compile Include="Projectile_Heal.cs" />
     <Compile Include="Projectile_Lightning.cs" />
-    <Compile Include="Verb_Lightning.cs" />
+    <Compile Include="AM_StatDefOf.cs" />
+    <Compile Include="Verb_ShootCharged.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

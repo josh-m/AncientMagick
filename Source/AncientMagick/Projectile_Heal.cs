@@ -5,7 +5,7 @@ using System.Text;
 using Verse;
 using UnityEngine;
 
-namespace Magick
+namespace AncientMagick
 {
     class Projectile_Heal : Projectile
     {

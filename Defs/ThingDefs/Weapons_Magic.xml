@@ -22,9 +22,9 @@
 		<altitudeLayer>Item</altitudeLayer>
 		<alwaysHaulable>True</alwaysHaulable>
 		<tickerType>Never</tickerType>
-		<techLevel>Neolithic</techLevel>
+		<techLevel>Medieval</techLevel>
 		<thingCategories>
-			<li>WeaponsRanged</li>
+      <li>WeaponsMagick</li>
 		</thingCategories>
 		<inspectorTabs>
 			<li>ITab_Art</li>
@@ -50,6 +50,20 @@
 	</ThingDef>
 	
 	<ThingDef Name="BaseMakeableStaff" ParentName="BaseStaff" Abstract="True">
+		<recipeMaker>
+			<workSpeedStat>SmithingSpeed</workSpeedStat>
+			<workSkill>Crafting</workSkill>
+			<effectWorking>Smith</effectWorking>
+			<soundWorking>Recipe_Smith</soundWorking>
+			<recipeUsers>
+				<li>ElectricSmithy</li>
+        <li>FueledSmithy</li>
+			</recipeUsers>
+			<unfinishedThingDef>UnfinishedWeapon</unfinishedThingDef>
+		</recipeMaker>
+	</ThingDef>
+  
+  <ThingDef Name="BaseChargeableStaff" ParentName="BaseStaff" Abstract="True">
 		<recipeMaker>
 			<workSpeedStat>SmithingSpeed</workSpeedStat>
 			<workSkill>Crafting</workSkill>
@@ -147,7 +161,7 @@
 		</projectile>
 	</ThingDef>
   
-	<ThingDef ParentName="BaseMakeableStaff">
+	<ThingDef ParentName="BaseChargeableStaff">
 		<defName>Staff_Fire</defName>
 		<label>staff of fire</label>
 		<description>blah blah fireball</description>
@@ -157,21 +171,23 @@
 		</graphicData>
 		<soundInteract>BowLarge</soundInteract>
 		<statBases>
-			<WorkToMake>1200</WorkToMake>
+			<WorkToMake>300</WorkToMake>
 			<MarketValue>100</MarketValue>
 			<AccuracyTouch>0.7</AccuracyTouch>
 			<AccuracyShort>0.6</AccuracyShort>
 			<AccuracyMedium>0.6</AccuracyMedium>
 			<AccuracyLong>0.5</AccuracyLong>
 			<RangedWeapon_Cooldown>3.0</RangedWeapon_Cooldown>
+      <Charges>3</Charges>
 		</statBases>
 		<costList>
-			<WoodLog>150</WoodLog>
+			<Staff_Arcane>1</Staff_Arcane>
+      <Silver>100</Silver>
 		</costList>
 		<destroyOnDrop>False</destroyOnDrop>
 		<verbs>
 			<li>
-				<verbClass>Verb_Shoot</verbClass>
+				<verbClass>AncientMagick.Verb_ShootCharged</verbClass>
 				<hasStandardCommand>true</hasStandardCommand>
 				<projectileDef>Bolt_Fire</projectileDef>
 				<ai_IsIncendiary>true</ai_IsIncendiary>
@@ -186,13 +202,18 @@
 				<soundCastTail>GunTail_Light</soundCastTail>
 			</li>
 		</verbs>
+    <comps>
+      <li Class="AncientMagick.CompProperties_ChargeUser">
+        <chargeCount>3</chargeCount>
+      </li>
+    </comps>
 	</ThingDef>
 	
 	<!-- Lightning Staff-->
 	<ThingDef ParentName="BaseBolt">
 		<defName>Bolt_Lightning</defName>
 		<label>lightning bolt</label>
-		<thingClass>Magick.Projectile_Lightning</thingClass>
+		<thingClass>AncientMagick.Projectile_Lightning</thingClass>
     <graphicData>
       <graphicClass>Graphic_Single</graphicClass>
       <texPath>ArcaneBolt</texPath>
@@ -206,7 +227,7 @@
 		</projectile>
 	</ThingDef>
 	
-	<ThingDef ParentName="BaseMakeableStaff">
+	<ThingDef ParentName="BaseChargeableStaff">
 		<defName>Staff_Lightning</defName>
 		<label>staff of lightning</label>
 		<description>blah blah lightning</description>
@@ -216,21 +237,23 @@
 		</graphicData>
 		<soundInteract>BowLarge</soundInteract>
 		<statBases>
-			<WorkToMake>1200</WorkToMake>
+			<WorkToMake>300</WorkToMake>
 			<MarketValue>100</MarketValue>
 			<AccuracyTouch>0.7</AccuracyTouch>
 			<AccuracyShort>0.6</AccuracyShort>
 			<AccuracyMedium>0.6</AccuracyMedium>
 			<AccuracyLong>0.5</AccuracyLong>
 			<RangedWeapon_Cooldown>3.0</RangedWeapon_Cooldown>
+      <Charges>3</Charges>
 		</statBases>
 		<costList>
-			<WoodLog>150</WoodLog>
+			<Staff_Arcane>1</Staff_Arcane>
+      <Silver>100</Silver>
 		</costList>
 		<destroyOnDrop>False</destroyOnDrop>
 		<verbs>
 			<li>
-				<verbClass>Verb_Shoot</verbClass>
+				<verbClass>AncientMagick.Verb_ShootCharged</verbClass>
 				<hasStandardCommand>true</hasStandardCommand>
 				<projectileDef>Bolt_Lightning</projectileDef>
 				<warmupTicks>275</warmupTicks>
@@ -243,13 +266,18 @@
 				<soundCast>InfernoCannon_Fire</soundCast>
 			</li>
 		</verbs>
+    <comps>
+      <li Class="AncientMagick.CompProperties_ChargeUser">
+        <chargeCount>3</chargeCount>
+      </li>
+    </comps>
 	</ThingDef>
 	
 	<!-- Frost Staff -->
 	<ThingDef ParentName="BaseBolt">
 		<defName>Bolt_Frost</defName>
 		<label>frost bolt</label>
-		<thingClass>Magick.Projectile_Frost</thingClass>
+		<thingClass>AncientMagick.Projectile_Frost</thingClass>
     <graphicData>
       <graphicClass>Graphic_Single</graphicClass>
       <texPath>FrostBolt</texPath>
@@ -262,7 +290,7 @@
 		</projectile>
 	</ThingDef>
 
-	<ThingDef ParentName="BaseMakeableStaff">
+	<ThingDef ParentName="BaseChargeableStaff">
 		<defName>Staff_Frost</defName>
 		<label>staff of frost</label>
 		<description>A magical staff capable of firing a freezing bolt.</description>
@@ -272,21 +300,23 @@
 		</graphicData>
 		<soundInteract>BowLarge</soundInteract>
 		<statBases>
-			<WorkToMake>1200</WorkToMake>
+			<WorkToMake>300</WorkToMake>
 			<MarketValue>100</MarketValue>
 			<AccuracyTouch>0.7</AccuracyTouch>
 			<AccuracyShort>0.6</AccuracyShort>
 			<AccuracyMedium>0.6</AccuracyMedium>
 			<AccuracyLong>0.5</AccuracyLong>
 			<RangedWeapon_Cooldown>3.0</RangedWeapon_Cooldown>
+      <Charges>5</Charges>
 		</statBases>
 		<costList>
-			<WoodLog>150</WoodLog>
+			<Staff_Arcane>1</Staff_Arcane>
+      <Silver>100</Silver>
 		</costList>
 		<destroyOnDrop>False</destroyOnDrop>
 		<verbs>
 			<li>
-				<verbClass>Verb_Shoot</verbClass>
+				<verbClass>AncientMagick.Verb_ShootCharged</verbClass>
 				<hasStandardCommand>true</hasStandardCommand>
 				<projectileDef>Bolt_Frost</projectileDef>
 				<warmupTicks>250</warmupTicks>
@@ -300,13 +330,18 @@
 				<soundCastTail>GunTail_Light</soundCastTail>
 			</li>
 		</verbs>
+    <comps>
+      <li Class="AncientMagick.CompProperties_ChargeUser">
+        <chargeCount>5</chargeCount>
+      </li>
+    </comps>
 	</ThingDef>
 
 <!-- Staff of Healing -->
 	<ThingDef ParentName="BaseBolt">
 		<defName>Bolt_Heal</defName>
 		<label>healing bolt</label>
-		<thingClass>Magick.Projectile_Heal</thingClass>
+		<thingClass>AncientMagick.Projectile_Heal</thingClass>
     <graphicData>
       <graphicClass>Graphic_Single</graphicClass>
       <texPath>HealBolt</texPath>
@@ -319,7 +354,7 @@
 		</projectile>
 	</ThingDef>
 	
-	<ThingDef ParentName="BaseMakeableStaff">
+	<ThingDef ParentName="BaseChargeableStaff">
 		<defName>Staff_Heal</defName>
 		<label>staff of healing</label>
 		<description>A magical staff capable of firing a healing bolt.</description>
@@ -329,21 +364,23 @@
 		</graphicData>
 		<soundInteract>BowLarge</soundInteract>
 		<statBases>
-			<WorkToMake>1200</WorkToMake>
+			<WorkToMake>300</WorkToMake>
 			<MarketValue>100</MarketValue>
 			<AccuracyTouch>0.95</AccuracyTouch>
 			<AccuracyShort>0.9</AccuracyShort>
 			<AccuracyMedium>0.7</AccuracyMedium>
 			<AccuracyLong>0.5</AccuracyLong>
 			<RangedWeapon_Cooldown>3.0</RangedWeapon_Cooldown>
+      <Charges>8</Charges>
 		</statBases>
 		<costList>
-			<WoodLog>150</WoodLog>
+			<Staff_Arcane>1</Staff_Arcane>
+      <Silver>100</Silver>
 		</costList>
 		<destroyOnDrop>False</destroyOnDrop>
 		<verbs>
 			<li>
-				<verbClass>Verb_Shoot</verbClass>
+				<verbClass>AncientMagick.Verb_ShootCharged</verbClass>
 				<hasStandardCommand>true</hasStandardCommand>
 				<projectileDef>Bolt_Heal</projectileDef>
 				<warmupTicks>250</warmupTicks>
@@ -354,6 +391,11 @@
 				<soundCastTail>GunTail_Light</soundCastTail>
 			</li>
 		</verbs>
+    <comps>
+      <li Class="AncientMagick.CompProperties_ChargeUser">
+        <chargeCount>8</chargeCount>
+      </li>
+    </comps>
 	</ThingDef>
 	
 	
