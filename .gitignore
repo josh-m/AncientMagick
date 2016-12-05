@@ -3,3 +3,4 @@
 *.user
 *.FileListAbsolute.txt
 *\obj\*
+*.rar

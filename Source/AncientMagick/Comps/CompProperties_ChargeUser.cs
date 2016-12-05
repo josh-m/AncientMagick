@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using Verse;
 
-namespace AncientMagick
+namespace AncientMagick.Comps
 {
     public class CompProperties_ChargeUser : CompProperties
     {

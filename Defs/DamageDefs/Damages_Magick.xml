@@ -32,4 +32,21 @@
     <harmAllLayersUntilOutside>true</harmAllLayersUntilOutside>
   </DamageDef> 
   
+  <DamageDef ParentName="LocalInjuryBase">
+    <defName>Magick_Reanimate</defName>
+    <label>reanimate</label>
+    <workerClass>AncientMagick.DamageWorker_Reanimate</workerClass>
+    <hasForcefulImpact>false</hasForcefulImpact>
+    <makesBlood>false</makesBlood>
+    <incapChanceMultiplier>0</incapChanceMultiplier>
+    <canInterruptJobs>false</canInterruptJobs>
+    <externalViolence>true</externalViolence>
+    <hediff>Cut</hediff>
+    <explosionDamage>1</explosionDamage>
+    <explosionCellMote>Mote_BlastDry</explosionCellMote>
+    <explosionColorCenter>(0.1, 0.2, 0.1)</explosionColorCenter>
+    <explosionColorEdge>(0.3, 0.9, 0.1</explosionColorEdge>
+    <soundExplosion>Interact_BeatFire</soundExplosion>
+  </DamageDef>
+  
 </Defs>

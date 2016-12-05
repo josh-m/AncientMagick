@@ -5,8 +5,9 @@ using System.Text;
 using RimWorld;
 using Verse;
 using Verse.AI;
+using AncientMagick.Gizmos;
 
-namespace AncientMagick
+namespace AncientMagick.Comps
 {
     public class CompChargeUser : ThingComp
     {
@@ -48,10 +49,19 @@ namespace AncientMagick
             {
                 if (compEquippable == null || compEquippable.PrimaryVerb == null)
                 {
+                    Log.Message("CompChargeUser.wielder no return");
                     return null;
                 }
+                Log.Message($"CompChargeUser.wielder: {compEquippable.PrimaryVerb.CasterPawn.Name}");
                 return compEquippable.PrimaryVerb.CasterPawn;
             }
+        }
+
+        //save/load charge state
+        public override void PostExposeData()
+        {
+            base.PostExposeData();
+            Scribe_Values.LookValue<int>(ref this.curChargeCountInt, "currentCharge", 5, false);
         }
 
         public override void Initialize(CompProperties props)
@@ -59,11 +69,13 @@ namespace AncientMagick
             base.Initialize(props);
             curChargeCountInt = Props.chargeCount;
         }
-
+        
         public override IEnumerable<Command> CompGetGizmosExtra()
         {
+            //Log.Message("GetGizmos ChargeUser");
             GizmoChargeStatus chargeStatusGizmo = new GizmoChargeStatus { compCharge = this };
             yield return chargeStatusGizmo;
+            yield return (new GizmoChargeStatus { compCharge = this });
         }
 
         public void useCharge()

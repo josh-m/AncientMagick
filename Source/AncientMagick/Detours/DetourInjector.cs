@@ -24,10 +24,21 @@ namespace AncientMagick.Detours
 
         public static bool InjectDetours()
         {
-            // Detour ScatterAt
             if (!Detours.TryDetourFromTo(typeof(RimWorld.GenStep_ScatterShrines).GetMethod("ScatterAt", BindingFlags.Instance | BindingFlags.NonPublic),
                 typeof(GenStep_ScatterShrines).GetMethod("ScatterAt", BindingFlags.Instance | BindingFlags.NonPublic)))
                 return false;
+            if (!Detours.TryDetourFromTo(typeof(Verse.Pawn_EquipmentTracker).GetMethod("GetGizmos", BindingFlags.Instance | BindingFlags.Public),
+                typeof(Detours_Pawn_EquipmentTracker).GetMethod("GetGizmos", BindingFlags.Static | BindingFlags.NonPublic)))
+                return false;
+            /*
+             * R&D into finding a way to load multiple gizmos on a weapon (for multiple spells tied to a single staff)
+             * Currently Disabled due to problems with internal detour access violations
+             
+            if (!Detours.TryDetourFromTo(Detours_InspectGizmoGrid._InspectGizmoGrid.GetMethod("DrawInspectGizmoGridFor", BindingFlags.Static | BindingFlags.Public),
+                typeof(Detours_InspectGizmoGrid).GetMethod("DrawInspectGizmoGridFor", BindingFlags.Static | BindingFlags.NonPublic)))
+                return false;
+            */
+            
             return true;
         }
     }

@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <HediffDef>
+    <defName>MagickLifeforce</defName>
+    <label>magick lifeforce</label>
+    <hediffClass>Hediff_AddedPart</hediffClass>
+    <defaultLabelColor>(0.9,0.5,0.5)</defaultLabelColor>
+    <isBad>false</isBad>
+    <addedPartProps>
+      <partEfficiency>1.0</partEfficiency>
+    </addedPartProps>
+    <stages>
+      <li>
+        <setMinPartEfficiency>0.1</setMinPartEfficiency>
+        <painFactor>0</painFactor>
+        <capMods>
+          <li>
+            <capacity>BloodPumping</capacity>
+          </li>
+          <li>
+            <capacity>Consciousness</capacity>
+          </li>
+          <li>
+            <capacity>Moving</capacity>
+          </li>
+          <li>
+            <capacity>Breathing</capacity>
+          </li>
+          <li>
+            <capacity>BloodFiltration</capacity>
+          </li>
+          <li>
+            <capacity>Metabolism</capacity>
+          </li>
+        </capMods>
+      </li>
+    </stages>
+  </HediffDef>
+
+  <RecipeDef>
+    <defName>InstallMagickLifeforce</defName>
+    <label>install magick</label>
+    <recipeUsers>
+      <li>Human</li>
+			<li>Alpaca</li>
+			<li>Alphabeaver</li>
+			<li>Boomalope</li>
+			<li>Boomrat</li>
+			<li>Capybara</li>
+			<li>Caribou</li>
+			<li>Cassowary</li>
+			<li>Cat</li>
+			<li>Chicken</li>
+			<li>Chinchilla</li>
+			<li>Cougar</li>
+			<li>Cow</li>
+			<li>Deer</li>
+			<li>Dromedary</li>
+			<li>Elephant</li>
+			<li>Elk</li>
+			<li>Emu</li>
+			<li>FoxArctic</li>
+			<li>FoxFennec</li>
+			<li>FoxRed</li>
+			<li>Gazelle</li>
+			<li>GrizzlyBear</li>
+			<li>Hare</li>
+			<li>Husky</li>
+			<li>Ibex</li>
+			<li>Iguana</li>
+			<li>LabradorRetriever</li>
+			<li>Lynx</li>
+			<li>Megascarab</li>
+			<li>Megatherium</li>
+			<li>Monkey</li>
+			<li>Muffalo</li>
+			<li>Ostrich</li>
+			<li>Panther</li>
+			<li>Pig</li>
+			<li>PolarBear</li>
+			<li>Raccoon</li>
+			<li>Rat</li>
+			<li>Rhinoceros</li>
+			<li>Snowhare</li>
+			<li>Squirrel</li>
+			<li>Thrumbo</li>
+			<li>Tortoise</li>
+			<li>Turkey</li>
+			<li>Warg</li>
+			<li>WildBoar</li>
+			<li>WolfArctic</li>
+			<li>WolfTimber</li>
+			<li>YorkshireTerrier</li>
+    </recipeUsers>
+    <appliedOnFixedBodyParts>
+      <li>Brain</li>
+    </appliedOnFixedBodyParts>
+    <addsHediff>MagickLifeforce</addsHediff>
+  </RecipeDef>
+  
+  
+</Defs>

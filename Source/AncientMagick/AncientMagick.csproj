@@ -50,16 +50,29 @@
   <ItemGroup>
     <Compile Include="Comps\CompChargeUser.cs" />
     <Compile Include="Comps\CompProperties_ChargeUser.cs" />
-    <Compile Include="DetourInjector.cs" />
-    <Compile Include="Detours.cs" />
-    <Compile Include="Detours_GenStep_ScatterShrines.cs" />
-    <Compile Include="GizmoChargeStatus.cs" />
-    <Compile Include="Projectile_Frost.cs" />
-    <Compile Include="Projectile_Heal.cs" />
-    <Compile Include="Projectile_Lightning.cs" />
-    <Compile Include="AM_StatDefOf.cs" />
-    <Compile Include="Verb_ShootCharged.cs" />
+    <Compile Include="Comps\CompProperties_SpellCaster.cs" />
+    <Compile Include="Comps\CompSpellCaster.cs" />
+    <Compile Include="DamageWorkers\DamageWorker_AddInjury_Extinguish.cs" />
+    <Compile Include="z_Attic\CompPawnGizmo.cs" />
+    <Compile Include="Detours\DetourInjector.cs" />
+    <Compile Include="DetoursCore\Detours.cs" />
+    <Compile Include="z_Attic\CompRangedGizmoGiver.cs" />
+    <Compile Include="z_Attic\Detours_InspectGizmoGrid.cs" />
+    <Compile Include="Detours\GenStep_ScatterShrines.cs" />
+    <Compile Include="Detours\Detours_Pawn_EquipmentTracker.cs" />
+    <Compile Include="z_Attic\GizmoCastSpell.cs" />
+    <Compile Include="Gizmos\GizmoChargeStatus.cs" />
+    <Compile Include="ObjectExtensions.cs" />
+    <Compile Include="Projectiles\Projectile_Frost.cs" />
+    <Compile Include="Projectiles\Projectile_Heal.cs" />
+    <Compile Include="Projectiles\Projectile_Lightning.cs" />
+    <Compile Include="DefOfs\AM_StatDefOf.cs" />
+    <Compile Include="DamageWorkers\DamageWorker_Reanimate.cs" />
+    <Compile Include="Verbs\Verb_ShootCharged.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="DetoursCore\Comps\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

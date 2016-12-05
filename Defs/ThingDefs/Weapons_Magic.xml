@@ -116,22 +116,22 @@
     <soundInteract>BowLarge</soundInteract>
 		<statBases>
 			<WorkToMake>1200</WorkToMake>
-			<MarketValue>100</MarketValue>
 			<AccuracyTouch>0.99</AccuracyTouch>
 			<AccuracyShort>0.95</AccuracyShort>
 			<AccuracyMedium>0.91</AccuracyMedium>
 			<AccuracyLong>0.86</AccuracyLong>
-			<RangedWeapon_Cooldown>3.0</RangedWeapon_Cooldown>
+			<RangedWeapon_Cooldown>1.8</RangedWeapon_Cooldown>
 		</statBases>    
 		<costList>
 			<WoodLog>150</WoodLog>
+      <Silver>250</Silver>
 		</costList>
 		<verbs>
 			<li>
 				<verbClass>Verb_Shoot</verbClass>
 				<hasStandardCommand>true</hasStandardCommand>
 				<projectileDef>Bolt_Arcane</projectileDef>
-				<warmupTicks>85</warmupTicks>
+				<warmupTicks>75</warmupTicks>
 				<range>30</range>
 				<burstShotCount>5</burstShotCount>
         <ticksBetweenBurstShots>35</ticksBetweenBurstShots>
@@ -172,13 +172,12 @@
 		<soundInteract>BowLarge</soundInteract>
 		<statBases>
 			<WorkToMake>300</WorkToMake>
-			<MarketValue>100</MarketValue>
 			<AccuracyTouch>0.7</AccuracyTouch>
 			<AccuracyShort>0.6</AccuracyShort>
 			<AccuracyMedium>0.6</AccuracyMedium>
 			<AccuracyLong>0.5</AccuracyLong>
-			<RangedWeapon_Cooldown>3.0</RangedWeapon_Cooldown>
-      <Charges>3</Charges>
+			<RangedWeapon_Cooldown>2.8</RangedWeapon_Cooldown>
+      <Charges>5</Charges>
 		</statBases>
 		<costList>
 			<Staff_Arcane>1</Staff_Arcane>
@@ -191,7 +190,7 @@
 				<hasStandardCommand>true</hasStandardCommand>
 				<projectileDef>Bolt_Fire</projectileDef>
 				<ai_IsIncendiary>true</ai_IsIncendiary>
-				<warmupTicks>275</warmupTicks>
+				<warmupTicks>150</warmupTicks>
 				<range>32</range>
 				<burstShotCount>1</burstShotCount>
 				<targetParams>
@@ -203,8 +202,8 @@
 			</li>
 		</verbs>
     <comps>
-      <li Class="AncientMagick.CompProperties_ChargeUser">
-        <chargeCount>3</chargeCount>
+      <li Class="AncientMagick.Comps.CompProperties_ChargeUser">
+        <chargeCount>5</chargeCount>
       </li>
     </comps>
 	</ThingDef>
@@ -221,9 +220,9 @@
 		<projectile>
 			<flyOverhead>false</flyOverhead>
 			<damageDef>EMP</damageDef>
-			<DamageAmountBase>1</DamageAmountBase>
+			<DamageAmountBase>25</DamageAmountBase>
 			<speed>60</speed>
-			<explosionRadius>1.5</explosionRadius>
+			<explosionRadius>2.5</explosionRadius>
 		</projectile>
 	</ThingDef>
 	
@@ -238,13 +237,12 @@
 		<soundInteract>BowLarge</soundInteract>
 		<statBases>
 			<WorkToMake>300</WorkToMake>
-			<MarketValue>100</MarketValue>
 			<AccuracyTouch>0.7</AccuracyTouch>
 			<AccuracyShort>0.6</AccuracyShort>
 			<AccuracyMedium>0.6</AccuracyMedium>
 			<AccuracyLong>0.5</AccuracyLong>
-			<RangedWeapon_Cooldown>3.0</RangedWeapon_Cooldown>
-      <Charges>3</Charges>
+			<RangedWeapon_Cooldown>3.2</RangedWeapon_Cooldown>
+      <Charges>5</Charges>
 		</statBases>
 		<costList>
 			<Staff_Arcane>1</Staff_Arcane>
@@ -256,8 +254,8 @@
 				<verbClass>AncientMagick.Verb_ShootCharged</verbClass>
 				<hasStandardCommand>true</hasStandardCommand>
 				<projectileDef>Bolt_Lightning</projectileDef>
-				<warmupTicks>275</warmupTicks>
-				<range>32</range>
+				<warmupTicks>50</warmupTicks>
+				<range>36</range>
 				<burstShotCount>1</burstShotCount>
 				<targetParams>
 					<canTargetLocations>true</canTargetLocations>
@@ -267,8 +265,8 @@
 			</li>
 		</verbs>
     <comps>
-      <li Class="AncientMagick.CompProperties_ChargeUser">
-        <chargeCount>3</chargeCount>
+      <li Class="AncientMagick.Comps.CompProperties_ChargeUser">
+        <chargeCount>5</chargeCount>
       </li>
     </comps>
 	</ThingDef>
@@ -286,7 +284,7 @@
 			<damageDef>Magick_Frostbite</damageDef>
 			<DamageAmountBase>1</DamageAmountBase>
 			<speed>30</speed>
-			<explosionRadius>3.6</explosionRadius>
+			<explosionRadius>4.5</explosionRadius>
 		</projectile>
 	</ThingDef>
 
@@ -301,12 +299,11 @@
 		<soundInteract>BowLarge</soundInteract>
 		<statBases>
 			<WorkToMake>300</WorkToMake>
-			<MarketValue>100</MarketValue>
 			<AccuracyTouch>0.7</AccuracyTouch>
 			<AccuracyShort>0.6</AccuracyShort>
 			<AccuracyMedium>0.6</AccuracyMedium>
 			<AccuracyLong>0.5</AccuracyLong>
-			<RangedWeapon_Cooldown>3.0</RangedWeapon_Cooldown>
+			<RangedWeapon_Cooldown>2.0</RangedWeapon_Cooldown>
       <Charges>5</Charges>
 		</statBases>
 		<costList>
@@ -319,7 +316,7 @@
 				<verbClass>AncientMagick.Verb_ShootCharged</verbClass>
 				<hasStandardCommand>true</hasStandardCommand>
 				<projectileDef>Bolt_Frost</projectileDef>
-				<warmupTicks>250</warmupTicks>
+				<warmupTicks>125</warmupTicks>
 				<range>30</range>
 				<burstShotCount>1</burstShotCount>
 				<targetParams>
@@ -331,7 +328,7 @@
 			</li>
 		</verbs>
     <comps>
-      <li Class="AncientMagick.CompProperties_ChargeUser">
+      <li Class="AncientMagick.Comps.CompProperties_ChargeUser">
         <chargeCount>5</chargeCount>
       </li>
     </comps>
@@ -349,7 +346,7 @@
 		<projectile>
 			<flyOverhead>false</flyOverhead>
 			<damageDef>HealGlobal</damageDef>
-			<DamageAmountBase>-5</DamageAmountBase>
+			<DamageAmountBase>-6</DamageAmountBase>
 			<speed>50</speed>
 		</projectile>
 	</ThingDef>
@@ -365,13 +362,12 @@
 		<soundInteract>BowLarge</soundInteract>
 		<statBases>
 			<WorkToMake>300</WorkToMake>
-			<MarketValue>100</MarketValue>
-			<AccuracyTouch>0.95</AccuracyTouch>
-			<AccuracyShort>0.9</AccuracyShort>
-			<AccuracyMedium>0.7</AccuracyMedium>
-			<AccuracyLong>0.5</AccuracyLong>
-			<RangedWeapon_Cooldown>3.0</RangedWeapon_Cooldown>
-      <Charges>8</Charges>
+			<AccuracyTouch>1.0</AccuracyTouch>
+			<AccuracyShort>0.99</AccuracyShort>
+			<AccuracyMedium>0.96</AccuracyMedium>
+			<AccuracyLong>0.92</AccuracyLong>
+			<RangedWeapon_Cooldown>2.5</RangedWeapon_Cooldown>
+      <Charges>5</Charges>
 		</statBases>
 		<costList>
 			<Staff_Arcane>1</Staff_Arcane>
@@ -383,7 +379,7 @@
 				<verbClass>AncientMagick.Verb_ShootCharged</verbClass>
 				<hasStandardCommand>true</hasStandardCommand>
 				<projectileDef>Bolt_Heal</projectileDef>
-				<warmupTicks>250</warmupTicks>
+				<warmupTicks>125</warmupTicks>
 				<range>26</range>
 				<burstShotCount>1</burstShotCount>
 				<muzzleFlashScale>10</muzzleFlashScale>
@@ -392,8 +388,71 @@
 			</li>
 		</verbs>
     <comps>
-      <li Class="AncientMagick.CompProperties_ChargeUser">
-        <chargeCount>8</chargeCount>
+      <li Class="AncientMagick.Comps.CompProperties_ChargeUser">
+        <chargeCount>5</chargeCount>
+      </li>
+    </comps>
+	</ThingDef>
+  
+  <!--Corpse Staff -->
+	<ThingDef ParentName="BaseBolt">
+		<defName>Bolt_Reanimate</defName>
+		<label>reanimate bolt</label>
+		<thingClass>Projectile_Explosive</thingClass>
+    <graphicData>
+      <graphicClass>Graphic_Single</graphicClass>
+      <texPath>FrostBolt</texPath>
+    </graphicData>
+		<projectile>
+			<damageDef>Magick_Reanimate</damageDef>
+			<DamageAmountBase>3</DamageAmountBase>
+			<speed>30</speed>
+			<explosionRadius>2</explosionRadius>
+		</projectile>
+	</ThingDef>
+  
+	<ThingDef ParentName="BaseChargeableStaff">
+		<defName>Staff_Reanimate</defName>
+		<label>staff of corpse animation</label>
+		<description>A magical staff capable of animating corpses.</description>
+		<graphicData>
+			<texPath>Staff</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+		<soundInteract>BowLarge</soundInteract>
+		<statBases>
+			<WorkToMake>300</WorkToMake>
+			<AccuracyTouch>0.7</AccuracyTouch>
+			<AccuracyShort>0.6</AccuracyShort>
+			<AccuracyMedium>0.6</AccuracyMedium>
+			<AccuracyLong>0.5</AccuracyLong>
+			<RangedWeapon_Cooldown>2.0</RangedWeapon_Cooldown>
+      <Charges>5</Charges>
+		</statBases>
+		<costList>
+			<Staff_Arcane>1</Staff_Arcane>
+      <Silver>100</Silver>
+		</costList>
+		<destroyOnDrop>False</destroyOnDrop>
+		<verbs>
+			<li>
+				<verbClass>AncientMagick.Verb_ShootCharged</verbClass>
+				<hasStandardCommand>true</hasStandardCommand>
+				<projectileDef>Bolt_Reanimate</projectileDef>
+				<warmupTicks>125</warmupTicks>
+				<range>30</range>
+				<burstShotCount>1</burstShotCount>
+				<targetParams>
+					<canTargetLocations>true</canTargetLocations>
+				</targetParams>
+				<muzzleFlashScale>10</muzzleFlashScale>
+				<soundCast>InfernoCannon_Fire</soundCast>
+				<soundCastTail>GunTail_Light</soundCastTail>
+			</li>
+		</verbs>
+    <comps>
+      <li Class="AncientMagick.Comps.CompProperties_ChargeUser">
+        <chargeCount>5</chargeCount>
       </li>
     </comps>
 	</ThingDef>

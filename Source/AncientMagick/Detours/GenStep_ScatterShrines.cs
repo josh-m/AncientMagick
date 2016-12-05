@@ -9,7 +9,7 @@ using Verse.AI.Group;
 
 namespace AncientMagick.Detours
 {
-    public class GenStep_ScatterShrines : GenStep_ScatterRuinsSimple
+    class GenStep_ScatterShrines : GenStep_ScatterRuinsSimple
     {
         //custom chance for ancient tome
         private const float SpellTomeChance = 0.75f;

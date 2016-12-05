@@ -3,26 +3,45 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
+
+using UnityEngine;
 using RimWorld;
 using Verse;
+
+using AncientMagick.Comps;
 
 
 namespace AncientMagick
 {
     public class Verb_ShootCharged : Verb_Shoot
     {
-
+        protected CompChargeUser compChargeInt = null;
+        protected CompChargeUser compCharge
+        {
+            get
+            {
+                if (compChargeInt == null && ownerEquipment != null)
+                {
+                    compChargeInt = ownerEquipment.TryGetComp<CompChargeUser>();
+                }
+                return compChargeInt;
+            }
+        }
 
 
         protected override bool TryCastShot()
         {
-            //Reduce ammunition
-            if (compAmmo != null)
+            List<ThingComp> comps = this.ownerEquipment.AllComps;
+            foreach (ThingComp comp in comps)
+                Log.Message(comp.ToString());
+
+            //Reduce charge
+            if (compCharge != null)
             {
                 if (base.TryCastShot())
                 {
-                    compAmmo.useCharge();
-                    if (!compAmmo.hasCharge)
+                    compCharge.useCharge();
+                    if (!compCharge.hasCharge)
                     {
                         SelfConsume();
                     }
@@ -55,20 +74,6 @@ namespace AncientMagick
                 ThingWithComps uncharged_staff = (ThingWithComps)ThingMaker.MakeThing(ThingDef.Named("Staff_Arcane"));
                 wielder.equipment.MakeRoomFor(uncharged_staff);
                 wielder.equipment.AddEquipment(uncharged_staff);
-            }
-        }
-
-        // Ammo variables
-        protected CompChargeUser compAmmoInt = null;
-        protected CompChargeUser compAmmo
-        {
-            get
-            {
-                if (compAmmoInt == null && ownerEquipment != null)
-                {
-                    compAmmoInt = ownerEquipment.TryGetComp<CompChargeUser>();
-                }
-                return compAmmoInt;
             }
         }
     }
