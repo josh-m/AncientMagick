@@ -20,20 +20,11 @@ namespace AncientMagick
             if (corpse != null)
             {
                 this.pos = new IntVec3(corpse.Position.x,corpse.Position.y,corpse.Position.z);
-                Log.Message(pos.ToString());
-                Log.Message("found corpse");
-                Log.Message(corpse.ToString());
-                Log.Message(corpse.innerPawn.ToString());
 
                 Pawn dead_pawn = corpse.innerPawn;
                 //corpse.Destroy(DestroyMode.Vanish);
                 Reanimate(dead_pawn);
-                
-                
-                
-                          
             }
-            Log.Message(thing.ToString());
 
             return base.Apply(dinfo, thing);
         }
@@ -46,8 +37,6 @@ namespace AncientMagick
             //GenSpawn.Spawn(to_spawn, this.pos);
 
             //return to_spawn;
-            Log.Message(dead_pawn.health.
-                ToString());
 
             //dead_pawn.health.Reset(); //stop being dead
 
@@ -78,10 +67,10 @@ namespace AncientMagick
                 {
                     if (hediffs[i].def.lethalSeverity > -1 && (hediffs[i].Severity >= hediffs[i].def.lethalSeverity))
                     {
-                        Log.Message($"{hediffs[i].def.label} lethal severity: { hediffs[i].def.lethalSeverity}");
-                        Log.Message($"{hediffs[i].Part.def.label} {hediffs[i].def.label}: {hediffs[i].DebugString()}");
+                        //Log.Message($"{hediffs[i].def.label} lethal severity: { hediffs[i].def.lethalSeverity}");
+                        //Log.Message($"{hediffs[i].Part.def.label} {hediffs[i].def.label}: {hediffs[i].DebugString()}");
                         hediffs[i].Severity = hediffs[i].def.lethalSeverity - 0.1f;
-                        Log.Message($"updated: {hediffs[i].Part.def.label} {hediffs[i].def.label}: {hediffs[i].DebugString()}");
+                        //Log.Message($"updated: {hediffs[i].Part.def.label} {hediffs[i].def.label}: {hediffs[i].DebugString()}");
                     }
                     if (!(hediffs[i] is Hediff_MissingPart) && hediffs[i].Visible)
                     {

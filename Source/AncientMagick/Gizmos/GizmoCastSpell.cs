@@ -6,13 +6,23 @@ using Verse;
 using RimWorld;
 using UnityEngine;
 
+using AncientMagick.Comps;
+
 namespace AncientMagick.Gizmos
 {
     [StaticConstructorOnStartup]
     public class GizmoCastSpell : Command
     {
+        public CompSpellCaster compSpells;
+
         private static bool initialized;
         private static new Texture2D BGTex;
+
+        public GizmoCastSpell()
+        {
+            base.defaultDesc = "Gizmo to cast a spell";
+            base.defaultLabel = "cast spell gizmo";
+        }
 
         public override float Width
         {
@@ -37,7 +47,7 @@ namespace AncientMagick.Gizmos
             Rect textRect = inRect;
             textRect.height = overRect.height / 2;
             Text.Font = GameFont.Tiny;
-            Widgets.Label(textRect, "Cast Spell");
+            Widgets.Label(textRect, $"Cast {compSpells.activeSpell} Spell");
 
             return new GizmoResult(GizmoState.Clear);
         }

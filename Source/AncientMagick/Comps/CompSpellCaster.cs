@@ -10,6 +10,8 @@ namespace AncientMagick.Comps
 {
     public class CompSpellCaster : ThingComp
     {
+        public string activeSpell = "None";
+
         public CompProperties_SpellCaster Props
         {
             get
@@ -25,10 +27,8 @@ namespace AncientMagick.Comps
 
         public override IEnumerable<Command> CompGetGizmosExtra()
         {
-            //Log.Message("GetGizmos SpellCast");
-            GizmoCastSpell gizmo = new GizmoCastSpell();
+            GizmoCastSpell gizmo = new GizmoCastSpell { compSpells = this };
             yield return gizmo;
-            yield break;
         }
 
     }

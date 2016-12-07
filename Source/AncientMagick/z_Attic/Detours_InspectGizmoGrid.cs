@@ -10,7 +10,7 @@ namespace AncientMagick.Detours
 {
     static class Detours_InspectGizmoGrid
     {
-        //Reflect MainTabWindow_Inspect class (it is internal static)
+        //Reflect InspectGizmoGrid class (it is internal static)
         public static Type _InspectGizmoGrid = Type.GetType("RimWorld.InspectGizmoGrid, Assembly-CSharp, Version=0.15.6089.4186, Culture=neutral, PublicKeyToken=null");
 
         //Reflect required fields from reflected class
@@ -23,7 +23,7 @@ namespace AncientMagick.Detours
                 .GetField("gizmoList", BindingFlags.Static | BindingFlags.NonPublic).GetValue(null);
 
 
-        private static void DrawInspectGizmoGridFor(this MainTabWindow_Inspect _this, IEnumerable<object> selectedObjects)
+        private static void DrawInspectGizmoGridFor(IEnumerable<object> selectedObjects)
         {
 
             if (_InspectGizmoGrid == null)
@@ -44,19 +44,9 @@ namespace AncientMagick.Detours
 
             try
             {
-                Log.Message("Enter Draw Inspect");
-                Log.Message($"{selectedObjects.ToString()}");
-                if (selectedObjects == null)
-                {
-                    Log.Message("selectedObjects is null");
-                }
-                Log.Message("parameter accessed!");
                 objList.Clear();
-                Log.Message("objList cleared");
                 objList.AddRange(selectedObjects);
-                Log.Message("objList added selectedObjects");
                 gizmoList.Clear();
-                Log.Message("Start selectable");
                 for (int i = 0; i < objList.Count; i++)
                 {
                     ISelectable selectable = objList[i] as ISelectable;
@@ -69,7 +59,6 @@ namespace AncientMagick.Detours
                         }
                     }
                 }
-                Log.Message("End selectable");
                 for (int j = 0; j < objList.Count; j++)
                 {
                     Thing t = objList[j] as Thing;
@@ -103,7 +92,6 @@ namespace AncientMagick.Detours
                 }
                 Gizmo gizmo;
                 GizmoGridDrawer.DrawGizmoGrid(gizmoList, MainTabWindow_Inspect.PaneSize.x + 20f, out gizmo);
-                //Log.Message("end");
             }
             catch (Exception ex)
             {

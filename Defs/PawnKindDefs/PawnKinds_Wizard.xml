@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <PawnKindDef Name="WizardBase" Abstract="True">
+    <defName>Wizard</defName>
+    <label>wizard</label>
+    <race>Human</race>
+    <combatPower>70</combatPower>
+    <defaultFactionType>Pirate</defaultFactionType>
+    <baseRecruitDifficulty>0.80</baseRecruitDifficulty>
+    <backstoryCategory>Raider</backstoryCategory>
+    <invNutrition>3</invNutrition>
+    <itemQuality>Normal</itemQuality>
+    <backstoryCryptosleepCommonality>0.25</backstoryCryptosleepCommonality>
+    <maxGenerationAge>58</maxGenerationAge>
+    <gearHealthRange>
+      <min>0.7</min>
+      <max>2.3</max>
+    </gearHealthRange>
+    <apparelTags>
+      <li>Outlander</li>
+    </apparelTags>
+    <apparelMoney>
+      <min>10</min>
+      <max>2800</max>
+    </apparelMoney>
+    <weaponMoney>
+      <min>2000</min>
+      <max>5000</max>
+    </weaponMoney>
+    <techHediffsMoney>
+      <min>1000</min>
+      <max>1500</max>
+    </techHediffsMoney>
+    <techHediffsTags>
+      <li>Advanced</li>
+    </techHediffsTags>
+    <techHediffsChance>0.003</techHediffsChance>
+  </PawnKindDef>
+
+  <PawnKindDef ParentName="WizardBase">
+    <defName>WizardLightning</defName>
+    <label>wizard lightning</label>
+    <weaponTags>
+      <li>DebugLightningStaff</li>
+    </weaponTags>
+  </PawnKindDef>
+  
+  <PawnKindDef ParentName="WizardBase">
+    <defName>WizardHeal</defName>
+    <label>wizard heal</label>
+    <weaponTags>
+      <li>DebugHealStaff</li>
+    </weaponTags>
+  </PawnKindDef>
+  
+  <PawnKindDef ParentName="WizardBase">
+    <defName>WizardFire</defName>
+    <label>wizard fire</label>
+    <weaponTags>
+      <li>DebugFireStaff</li>
+    </weaponTags>
+  </PawnKindDef>
+  
+  <PawnKindDef ParentName="WizardBase">
+    <defName>WizardFrost</defName>
+    <label>wizard frost</label>
+    <weaponTags>
+      <li>DebugFrostStaff</li>
+    </weaponTags>
+  </PawnKindDef>
+  
+</Defs>

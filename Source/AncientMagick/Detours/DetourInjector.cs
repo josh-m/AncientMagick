@@ -32,13 +32,15 @@ namespace AncientMagick.Detours
                 return false;
             /*
              * R&D into finding a way to load multiple gizmos on a weapon (for multiple spells tied to a single staff)
-             * Currently Disabled due to problems with internal detour access violations
-             
+             * Solved: Only one gizmo sharing the same label will be drawn, my gizmos were using the same default label
             if (!Detours.TryDetourFromTo(Detours_InspectGizmoGrid._InspectGizmoGrid.GetMethod("DrawInspectGizmoGridFor", BindingFlags.Static | BindingFlags.Public),
                 typeof(Detours_InspectGizmoGrid).GetMethod("DrawInspectGizmoGridFor", BindingFlags.Static | BindingFlags.NonPublic)))
                 return false;
+            if (!Detours.TryDetourFromTo(typeof(GizmoGridDrawer).GetMethod("DrawGizmoGrid", BindingFlags.Static | BindingFlags.Public),
+                typeof(Detours_GizmoGridDrawer_DrawGizmoGrid).GetMethod("DrawGizmoGrid", BindingFlags.Static | BindingFlags.NonPublic)))
+                return false;
             */
-            
+
             return true;
         }
     }

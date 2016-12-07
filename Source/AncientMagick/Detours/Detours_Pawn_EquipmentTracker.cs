@@ -31,9 +31,12 @@ namespace AncientMagick
                 ThingWithComps current = enumerator.Current;
 
                 IEnumerator<Gizmo> compGizmosEnumerator = current.GetGizmos().GetEnumerator();
-                while (compGizmosEnumerator.MoveNext())
+                while ( compGizmosEnumerator.MoveNext())
                 {
-                    yield return compGizmosEnumerator.Current;
+                    Gizmo gizmo = compGizmosEnumerator.Current;
+                    //add gizmo if it isn't a forbid gizmo
+                    if (!(gizmo.GetType() == typeof(Command_Toggle)))
+                        yield return gizmo;
                 }
 
                 IEnumerator<Command> enumerator2 = current.GetComp<CompEquippable>().GetVerbsCommands().GetEnumerator();

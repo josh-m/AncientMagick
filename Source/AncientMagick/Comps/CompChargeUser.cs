@@ -49,10 +49,8 @@ namespace AncientMagick.Comps
             {
                 if (compEquippable == null || compEquippable.PrimaryVerb == null)
                 {
-                    Log.Message("CompChargeUser.wielder no return");
                     return null;
                 }
-                Log.Message($"CompChargeUser.wielder: {compEquippable.PrimaryVerb.CasterPawn.Name}");
                 return compEquippable.PrimaryVerb.CasterPawn;
             }
         }
@@ -72,10 +70,8 @@ namespace AncientMagick.Comps
         
         public override IEnumerable<Command> CompGetGizmosExtra()
         {
-            //Log.Message("GetGizmos ChargeUser");
             GizmoChargeStatus chargeStatusGizmo = new GizmoChargeStatus { compCharge = this };
             yield return chargeStatusGizmo;
-            yield return (new GizmoChargeStatus { compCharge = this });
         }
 
         public void useCharge()

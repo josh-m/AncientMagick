@@ -31,10 +31,6 @@ namespace AncientMagick
 
         protected override bool TryCastShot()
         {
-            List<ThingComp> comps = this.ownerEquipment.AllComps;
-            foreach (ThingComp comp in comps)
-                Log.Message(comp.ToString());
-
             //Reduce charge
             if (compCharge != null)
             {

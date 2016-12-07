@@ -12,7 +12,6 @@ namespace AncientMagick
     {
         public override float Apply(DamageInfo dinfo, Thing thing)
         {
-            Log.Message("bb");
             Fire fire = thing as Fire;
             if (fire != null)
             {

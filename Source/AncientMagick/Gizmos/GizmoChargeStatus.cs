@@ -18,6 +18,7 @@ namespace AncientMagick.Gizmos
         private static Texture2D FullTex;
         private static Texture2D EmptyTex;
         private static new Texture2D BGTex;
+        
 
         public override float Width
         {
@@ -25,6 +26,12 @@ namespace AncientMagick.Gizmos
             {
                 return 120;
             }
+        }
+
+        public GizmoChargeStatus()
+        {
+            base.defaultDesc = "Gizmo to show charge";
+            base.defaultLabel = "charge remaining gizmo";
         }
 
         public override GizmoResult GizmoOnGUI(Vector2 topLeft)
@@ -53,7 +60,8 @@ namespace AncientMagick.Gizmos
             Widgets.Label(barRect, compCharge.curCharge + " / " + compCharge.Props.chargeCount);
             Text.Anchor = TextAnchor.UpperLeft;
 
-
+            //reset text so it doesn't linger for subsequent gizmos
+            Text.Font = GameFont.Tiny;
             return new GizmoResult(GizmoState.Clear);
         }
 

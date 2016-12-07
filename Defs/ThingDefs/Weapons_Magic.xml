@@ -74,6 +74,9 @@
 			</recipeUsers>
 			<unfinishedThingDef>UnfinishedWeapon</unfinishedThingDef>
 		</recipeMaker>
+    <weaponTags>
+      <li>ChargedStaff</li>
+    </weaponTags>
 	</ThingDef>
 	
 	<ThingDef Name="BaseBolt" Abstract="True">
@@ -202,10 +205,14 @@
 			</li>
 		</verbs>
     <comps>
+      <li Class="AncientMagick.Comps.CompProperties_SpellCaster"/>
       <li Class="AncientMagick.Comps.CompProperties_ChargeUser">
         <chargeCount>5</chargeCount>
       </li>
+      
+
     </comps>
+    <weaponTags><li>DebugFireStaff</li></weaponTags>
 	</ThingDef>
 	
 	<!-- Lightning Staff-->
@@ -253,6 +260,7 @@
 			<li>
 				<verbClass>AncientMagick.Verb_ShootCharged</verbClass>
 				<hasStandardCommand>true</hasStandardCommand>
+        <ai_IsIncendiary>true</ai_IsIncendiary>
 				<projectileDef>Bolt_Lightning</projectileDef>
 				<warmupTicks>50</warmupTicks>
 				<range>36</range>
@@ -265,10 +273,11 @@
 			</li>
 		</verbs>
     <comps>
-      <li Class="AncientMagick.Comps.CompProperties_ChargeUser">
-        <chargeCount>5</chargeCount>
+      <li Class="AncientMagick.Comps.CompProperties_SpellCaster">
       </li>
+
     </comps>
+    <weaponTags><li>DebugLightningStaff</li></weaponTags>
 	</ThingDef>
 	
 	<!-- Frost Staff -->
@@ -332,6 +341,7 @@
         <chargeCount>5</chargeCount>
       </li>
     </comps>
+    <weaponTags><li>DebugFrostStaff</li></weaponTags>
 	</ThingDef>
 
 <!-- Staff of Healing -->
@@ -392,6 +402,7 @@
         <chargeCount>5</chargeCount>
       </li>
     </comps>
+    <weaponTags><li>DebugHealStaff</li></weaponTags>
 	</ThingDef>
   
   <!--Corpse Staff -->
