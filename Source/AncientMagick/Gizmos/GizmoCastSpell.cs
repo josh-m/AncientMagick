@@ -18,6 +18,8 @@ namespace AncientMagick.Gizmos
         private static bool initialized;
         private static new Texture2D BGTex;
 
+        public Action nextSpellAction;
+
         public GizmoCastSpell()
         {
             base.defaultDesc = "Gizmo to cast a spell";
@@ -32,6 +34,16 @@ namespace AncientMagick.Gizmos
             }
         }
 
+        private void NextSpell()
+        {
+            compSpells.activateNextSpell();
+        }
+
+        public override void ProcessInput(Event ev)
+        {
+            base.ProcessInput(ev);
+            this.NextSpell();
+        }
 
         public override GizmoResult GizmoOnGUI(Vector2 topLeft)
         {
@@ -39,17 +51,32 @@ namespace AncientMagick.Gizmos
                 InitializeTextures();
 
             Rect overRect = new Rect(topLeft.x, topLeft.y, Width, Height);
+            bool mouseFlag = false;
+            if (Mouse.IsOver(overRect))
+            {
+                GUI.color = GenUI.MouseoverColor;
+                mouseFlag = true;
+            }
             Widgets.DrawBox(overRect);
             GUI.DrawTexture(overRect, BGTex);
+            GUI.color = Color.white;
 
+            bool clickFlag = false;
+            if (Widgets.ButtonInvisible(overRect))
+                clickFlag = true;
             Rect inRect = overRect.ContractedBy(6);
-
             Rect textRect = inRect;
-            textRect.height = overRect.height / 2;
+            textRect.height = overRect.height;
             Text.Font = GameFont.Tiny;
-            Widgets.Label(textRect, $"Cast {compSpells.activeSpell} Spell");
+            Widgets.Label(textRect, $"{compSpells.activeSpell}");
 
-            return new GizmoResult(GizmoState.Clear);
+            if (clickFlag)
+                return new GizmoResult(GizmoState.Interacted, Event.current);
+            if (mouseFlag)
+                return new GizmoResult(GizmoState.Mouseover);
+
+            else
+                return new GizmoResult(GizmoState.Clear);
         }
 
         private void InitializeTextures()

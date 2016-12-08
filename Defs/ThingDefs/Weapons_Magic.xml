@@ -205,12 +205,15 @@
 			</li>
 		</verbs>
     <comps>
-      <li Class="AncientMagick.Comps.CompProperties_SpellCaster"/>
+      <li Class="AncientMagick.Comps.CompProperties_SpellCaster">
+        <spellList>
+          <li>Fireball</li>
+          <li>Ring of Fire</li>
+        </spellList>
+      </li>
       <li Class="AncientMagick.Comps.CompProperties_ChargeUser">
         <chargeCount>5</chargeCount>
       </li>
-      
-
     </comps>
     <weaponTags><li>DebugFireStaff</li></weaponTags>
 	</ThingDef>
@@ -274,8 +277,13 @@
 		</verbs>
     <comps>
       <li Class="AncientMagick.Comps.CompProperties_SpellCaster">
+        <spellList>
+          <li>Call Lightning</li>
+        </spellList>
       </li>
-
+      <li Class="AncientMagick.Comps.CompProperties_ChargeUser">
+        <chargeCount>5</chargeCount>
+      </li>
     </comps>
     <weaponTags><li>DebugLightningStaff</li></weaponTags>
 	</ThingDef>

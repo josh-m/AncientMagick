@@ -8,7 +8,7 @@ namespace AncientMagick.Comps
 {
     public class CompProperties_SpellCaster : CompProperties
     {
-        public string spellName = "Undefined";
+        public List<string> spellList = new List<string>();
 
         public CompProperties_SpellCaster()
         {
